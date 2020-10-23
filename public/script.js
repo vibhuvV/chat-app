@@ -23,7 +23,7 @@ let prevR;
 socket.emit("add user", { name });
 
 socket.on("err", ({ error }) => {
-    window.location.reload();
+    window.location.replace("/");
 });
 
 socket.on("new user", ({ users }) => {
