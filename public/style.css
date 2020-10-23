@@ -1,0 +1,288 @@
+body {
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    background-color: #aaa;
+}
+
+.login {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.login input {
+    border: none;
+    border-bottom: 1px solid black;
+    height: 100px;
+    width: 700px;
+    background-color: #aaa;
+    padding: 0px;
+    margin: 0px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.login input:focus {
+    outline: none;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aaa;
+}
+
+.inner-container {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    box-shadow: 0px 0px 30px 0px #aaa;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.users {
+    width: 400px;
+    background-color: #eee;
+    height: 821px;
+    overflow: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.users ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.users ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* overflow: hidden; */
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding: 0px 10px;
+    border-bottom: 0.5px solid #ddd;
+    /* margin-bottom: 5px; */
+    /* width: 100%; */
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.users ul li:hover {
+    background-color: #fff;
+}
+
+.users ul li:first-child {
+    border-top: 0.5px solid #ddd;
+}
+
+.users ul li.active {
+    background-color: #fff;
+}
+
+.online {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: chartreuse;
+    border-radius: 50%;
+}
+
+.box {
+    /* position: fixed; */
+    /* bottom: 0; */
+    /* right: 20px; */
+    display: none;
+    width: 500px;
+    overflow: hidden;
+}
+
+.users-title {
+    position: sticky;
+    top: 0;
+}
+
+.titlebar {
+    display: flex;
+    /* position: relative; */
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 800;
+    color: #fff;
+    height: 80px;
+    justify-content: space-between;
+    background-color: #62b950;
+    align-items: center;
+    border-bottom: 1px solid #62b950;
+    padding: 0px 20px;
+}
+
+.titlebar span {
+    cursor: pointer;
+}
+
+.toggler {
+    /* position: absolute; */
+    margin: 0px;
+    top: 27px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.messages {
+    /* display: none; */
+    padding: 20px;
+    height: 600px;
+    background-color: #eee;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    box-shadow: inset 0px 25px 30px -20px #999, inset 0px -25px 30px -20px #999;
+    scroll-behavior: smooth;
+}
+
+div.messages div:last-child {
+    margin-bottom: 20px;
+}
+
+.usermessage-container {
+    text-align: left;
+}
+
+.usermessage {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    padding: 15px;
+    background-color: #b3b7b2;
+    color: black;
+}
+
+.usermessage span.name {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    color: grey;
+    font-weight: 600;
+    font-size: 12px;
+    position: absolute;
+    top: -15px;
+    left: 0px;
+}
+
+.usermessage span.time {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    color: grey;
+    font-size: 12px;
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+}
+
+.mymessage-container {
+    text-align: right;
+}
+
+.mymessage {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    padding: 15px;
+    background-color: white;
+    color: black;
+}
+
+.mymessage span.name {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    color: grey;
+    font-weight: 600;
+    font-size: 12px;
+    position: absolute;
+    bottom: -15px;
+    right: 0px;
+}
+
+.mymessage span.time {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    color: grey;
+    font-size: 12px;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+.chatinput {
+    position: relative;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+div.scrollbottom {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    top: -25px;
+    right: 5px;
+    background: #62b950;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatinput input {
+    height: 50px;
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    border-bottom: 5px;
+    width: 100%;
+    resize: none;
+}
+
+.chatinput input:focus {
+    outline: none;
+}
+
+.chatinput button {
+    background-color: #62b950;
+    padding: 5px;
+    height: 40px;
+    width: 90px;
+    font-size: 17px;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0px 0px 15px 0px #999;
+}
+
+.chatinput button:focus {
+    outline: none;
+}
+
+.chatinput button:active {
+    box-shadow: 0px 0px 5px 0px #999;
+}
+
+@media only screen and (max-width: 600px) {
+    .box {
+        right: 0px;
+    }
+}

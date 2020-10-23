@@ -1,0 +1,20 @@
+{
+  "name": "ui-chat",
+  "version": "1.0.0",
+  "description": "This is a anonymous chatting application",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["chatapp", "heroku", "anonymous chat"],
+  "author": "Vaibhav Verma",
+  "license": "ISC",
+  "engines": {
+    "node": "14.x"
+  }
+}
