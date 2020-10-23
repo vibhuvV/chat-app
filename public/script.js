@@ -8,7 +8,7 @@ if (params.has("name") && params.get("name").length > 0) {
 
 // let name = prompt("Enter your name");
 name = name.replace(/(<([^>]+)>)/gi, "");
-name = name.trim();
+name = name.trim().toLowerCase();
 
 const socket = io();
 
@@ -136,7 +136,7 @@ function createChatBox(currName) {
             });
         }
     });
-    textArea.addEventListener("focus", () => {
+    const removeNewMessage = () => {
         const users = Array.from(document.querySelectorAll(".users ul li"));
         users.forEach((user) => {
             if (
@@ -146,8 +146,10 @@ function createChatBox(currName) {
                 user.style.backgroundColor = "#eee";
             }
         });
-    });
+    };
+    textArea.addEventListener("focus", removeNewMessage);
     textArea.addEventListener("keypress", (e) => {
+        removeNewMessage();
         if (e.key === "Enter") {
             let msg = e.target.value;
             msg = msg.replace(/(<([^>]+)>)/gi, "");
