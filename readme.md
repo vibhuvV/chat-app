@@ -1,4 +1,4 @@
-# [CHAT APP](http://http://chat-app-vaibhav.herokuapp.com/)
+# [CHAT APP](http://chat-app-vaibhav.herokuapp.com/)
 
 ## Features
 
