@@ -5,6 +5,11 @@ body {
     background-color: #aaa;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
 .login {
     display: flex;
     height: 100%;
@@ -29,8 +34,6 @@ body {
 }
 
 .container {
-    height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #aaa;
@@ -38,7 +41,7 @@ body {
 
 .inner-container {
     display: flex;
-    height: auto;
+    height: 720px;
     justify-content: center;
     box-shadow: 0px 0px 30px 0px #aaa;
     border-radius: 5px;
@@ -48,8 +51,9 @@ body {
 .users {
     width: 400px;
     background-color: #eee;
-    height: 821px;
-    overflow: scroll;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     scrollbar-width: none;
     scroll-behavior: smooth;
 }
@@ -63,7 +67,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* overflow: hidden; */
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
@@ -71,10 +74,10 @@ body {
     text-transform: uppercase;
     padding: 0px 10px;
     border-bottom: 0.5px solid #ddd;
-    /* margin-bottom: 5px; */
-    /* width: 100%; */
     background-color: #eee;
     cursor: pointer;
+    scrollbar-width: none;
+    overflow-x: scroll;
 }
 
 .users ul li:hover {
@@ -98,9 +101,7 @@ body {
 }
 
 .box {
-    /* position: fixed; */
-    /* bottom: 0; */
-    /* right: 20px; */
+    min-width: 300px;
     display: none;
     width: 500px;
     overflow: hidden;
@@ -113,7 +114,6 @@ body {
 
 .titlebar {
     display: flex;
-    /* position: relative; */
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
@@ -133,17 +133,13 @@ body {
 }
 
 .toggler {
-    /* position: absolute; */
     margin: 0px;
-    top: 27px;
-    left: 15px;
     cursor: pointer;
 }
 
 .messages {
-    /* display: none; */
     padding: 20px;
-    height: 600px;
+    height: 500px;
     background-color: #eee;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -172,7 +168,8 @@ div.messages div:last-child {
 }
 
 .usermessage span.name {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
     color: grey;
     font-weight: 600;
     font-size: 12px;
@@ -182,7 +179,7 @@ div.messages div:last-child {
 }
 
 .usermessage span.time {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: grey;
     font-size: 12px;
     position: absolute;
@@ -207,7 +204,8 @@ div.messages div:last-child {
 }
 
 .mymessage span.name {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
     color: grey;
     font-weight: 600;
     font-size: 12px;
@@ -217,7 +215,7 @@ div.messages div:last-child {
 }
 
 .mymessage span.time {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: grey;
     font-size: 12px;
     position: absolute;

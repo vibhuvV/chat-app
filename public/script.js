@@ -1,6 +1,10 @@
 const params = new URLSearchParams(window.location.search);
 let name;
-if (params.has("name") && params.get("name").length > 0) {
+if (
+    params.has("name") &&
+    params.get("name").length > 0 &&
+    params.get("name").length < 10
+) {
     name = params.get("name");
 } else {
     window.location.replace("/");
@@ -8,6 +12,7 @@ if (params.has("name") && params.get("name").length > 0) {
 
 // let name = prompt("Enter your name");
 name = name.replace(/(<([^>]+)>)/gi, "");
+name = name.replace(/\s/g, "");
 name = name.trim().toLowerCase();
 
 const socket = io();

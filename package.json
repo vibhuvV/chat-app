@@ -11,7 +11,11 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["chatapp", "heroku", "anonymous chat"],
+  "keywords": [
+    "chatapp",
+    "heroku",
+    "anonymous chat"
+  ],
   "author": "Vaibhav Verma",
   "license": "ISC",
   "engines": {

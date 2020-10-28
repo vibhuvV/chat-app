@@ -14,23 +14,22 @@ const db = [];
 
 io.on("connection", (socket) => {
     socket.on("add user", ({ name }) => {
-        if (name.length > 0) {
+        if (
+            name.length > 0 &&
+            db.findIndex((user) => user.name === name) === -1
+        ) {
             socket.name = name;
             socket.chattingTo = [];
-            if (db.findIndex((user) => user.name === name) === -1) {
-                db.push(socket);
-                const users = db.map((user) => user.name);
-                io.emit("new user", { users });
-            } else {
-                socket.emit("err", { error: "User already exists" });
-            }
+            db.push(socket);
+            const users = db.map((user) => user.name);
+            io.emit("new user", { users });
         } else {
+            console.log(name, "tried to rejoin");
             socket.emit("redirection", "/");
         }
     });
 
     socket.on("private message", ({ to, from, text }) => {
-        // console.log(to, from, text);
         const index = db.findIndex((user) => user.name === to);
         if (index !== -1) {
             const rId = db[index].id;
