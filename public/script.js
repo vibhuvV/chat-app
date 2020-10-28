@@ -91,6 +91,13 @@ socket.on("private message", ({ to, from, text }) => {
     ms.scrollTop = ms.scrollHeight;
 });
 
+socket.on('user typing', ({typing}) => {
+    if(typing)
+        document.querySelector('.usertyping').style.display = 'block';
+    else
+    document.querySelector('.usertyping').style.display = 'none';
+})
+
 let togglerSwitch = false;
 
 function createChatBox(currName) {
@@ -111,6 +118,9 @@ function createChatBox(currName) {
                         
                     </div>
                     <div class="chatinput">
+                        <div
+                            class="usertyping"
+                        >${currName} is typing...</div>
                         <div
                             class="scrollbottom"
                         ></div>
@@ -168,8 +178,29 @@ function createChatBox(currName) {
                     text: msg,
                 });
             }
+            socket.emit("user typing", {typing: false, name: currName})
+        }else {
+            socket.emit('user typing', {typing: true, name: currName});
         }
     });
+    textArea.addEventListener('keyup', (e) => {
+        if(e.target.value === '')
+            socket.emit("user typing", {typing: false, name: currName})
+        else 
+            socket.emit('user typing', {typing: true, name: currName});
+    })
+    textArea.addEventListener('blur', () => {
+        socket.emit("user typing", {typing: false, name: currName})
+    })
+    // textArea.addEventListener("change", (e) => {
+    //     // socket.emit('user typing', {typing: true, name: currName});
+    //     // if(e.target.value === ''){
+    //     //     socket.emit("user typing", {typing: false, name: currName})
+    //     // }
+    //     console.log('hello')
+    // })
+
+    
 
     const scrollButton = document.querySelector(
         `#${currName} .chatinput .scrollbottom`

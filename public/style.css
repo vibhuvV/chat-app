@@ -233,6 +233,13 @@ div.messages div:last-child {
     background-color: white;
 }
 
+div.usertyping {
+    display: none;
+    position: absolute;
+    top: -20px;
+    right: 30px;
+}
+
 div.scrollbottom {
     display: none;
     position: absolute;

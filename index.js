@@ -43,6 +43,14 @@ io.on("connection", (socket) => {
         }
     });
 
+    socket.on('user typing', ({typing, name}) => {
+        const index = db.findIndex((user) => user.name === name);
+        if (index !== -1) {
+            const rId = db[index].id;
+            io.to(rId).emit("user typing", { typing });
+        }
+    })
+
     socket.on("disconnect", () => {
         const index = db.findIndex((user) => user.name === socket.name);
         if (index !== -1) {
